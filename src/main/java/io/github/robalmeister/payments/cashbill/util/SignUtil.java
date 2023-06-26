@@ -10,8 +10,8 @@ public class SignUtil {
     public String sign(CashbillCreatePaymentRequest req, CashbillInformation information) {
         StringBuilder sb = new StringBuilder();
         sb.append(req.getTitle());
-        sb.append(req.getAmount());
-        sb.append(req.getCurrencyCode());
+        sb.append(req.getAmount().getAmount());
+        sb.append(req.getAmount().getCurrencyCode());
         sb.append(req.getReturnUrl() != null ? req.getReturnUrl() : "");
         sb.append(req.getDescription() != null ? req.getDescription() : "");
         sb.append(req.getNegativeReturnUrl() != null ? req.getNegativeReturnUrl() : "");
